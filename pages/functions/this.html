@@ -1,128 +1,187 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Generic</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../../assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Generic</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+<body class="is-preload">
 
-							<!-- Header -->
-								<header id="header">
-									<a href="../../index.html" class="logo"><strong>JavaScript</strong> </a>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-									</ul>
-								</header>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>This</h1>
-									</header>
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+				<!-- Header -->
+				<header id="header">
+					<a href="../../index.html" class="logo"><strong>JavaScript</strong> </a>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>O que significa o This?</h1>
+					</header>
 
-									<hr class="major" />
+					<h2>Entendendo o This</h2>
+					<p>O This é uma forma de referenciar o objeto atual de uma execuxão, não é um conceito tão simples
+						de passar.
+						O This acessa quem é o dono do código que está sendo executado naquele momento.</p>
+					<p>No JavaScript o This pode variar dependendo de como a função é chamada.
+						Por exemplo:</p>
+					<p>Abrindo o browser e apertando f12 para abrir o console.
+						Vamos criar e chamar uma função:</p>
+					<pre><code>function f1() { console.log(this === window) }
+f1()</code></pre>
+					<img src="./thisImages/01This.png" alt="This image 01">
+					<p>Executando e chamando a função, vemos que é verdadeiro, ou seja, quando o this é usado nesse
+						contexto de fato o This aponta para o objeto global do browser.
+					</p>
+					<p>O This é sempre o objeto que está sendo referenciado naquele contexto de execução que é o dono
+						daquela função que está sendo executada naquele contexto. O problema é que no JavaScript
+						dependendo da forma que você chamar a função o This pode não apontar para o window mas para algo
+						totalmente diferente.</p>
+					<p>Usando essa mesma função que foi criada e chamada e que de fato está apontando para o objeto
+						global, vamos mudar a forma que ela está sendo chamada e vamos chamar onclick.</p>
+					<pre><code>document.getElementsByTagName('body')[0].onclick = f1</code></pre>
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
 
-									<hr class="major" />
+					<img src="./thisImages/02This.png" alt="This image 02">
+					<p>Vamos usar o body e pegar o primeiro elemento da página e ao clicarmos na página o resultado será
+						false.</p>
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+					<p><strong>Mas o resultado não era verdadeiro?</strong></p>
+					<p>Sim porém o This varia dependendo da forma que a função está sendo chamada e esse sem dúvida é um
+						dos motivos que mais causam confusão no JavaScript.</p>
 
-									<hr class="major" />
+					<hr class="major" />
 
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+					<h3>Vamos Criar uma nova função:</h3>
 
-								</section>
+					<pre><code>function f2() { console.log(this === document) }
+f2()</code></pre>
 
-						</div>
-					</div>
+					<img src="./thisImages/03This.png" alt="This image 03">
+					<p>Criamos uma função apontando para document e sabemos que no contexto global o This não aponta
+						para document, será que quando clicar com o mouse o this irá apontar para document?</p>
+					<p>Agora vamos mudar a forma que chamamos a função para onclick.</p>
+					<pre><code>document.getElementsByTagName ('body')[0].onclick = f2</code></pre>
+					<img src="./thisImages/04This.png" alt="This image 04">
+					<p>Vemos que não é o document!</p>
+					<p>Vamos buscar o elemento no html com a tag body e associar a uma constante.</p>
+					<pre><code>const body = document.getElementsByTagName ('body')[0]</code></pre>
+					<p>Vamos criar novamente a função e verificar se é igual a constante que criamos.</p>
+					<pre><code>function f2() { console.log(this === body) }</code></pre>
+					<p>Depois que fizermos isso vamos chamar a função onclick.</p>
+					<pre><code>document.getElementsByTagName ('body')[0].onclick = f2</code></pre>
+					<img src="./thisImages/05This.png" alt="This image 05">
+					<p>Clicando vemos que o resultado é verdadeiro.</p>
+					<p>Quem de fato representa o this ao chamar a função F2 a partir do click? É o próprio elemento que
+						está sendo clicado.</p>
+					<p>Porém se chamarmos a função f2...</p>
+					<pre><code>f2()</code></pre>
+					<img src="./thisImages/06This.png" alt="This image 06">
+					<p>Vamos ver que não é o body que está apontando para o This e sim o objeto window que mostramos
+						anteriormente.</p>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+					<hr class="major" />
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-
-							<!-- Menu -->
-							<nav id="menu">
-								<header class="major">
-									<h2>Menu</h2>
-								</header>
-								<ul>
-									<li><a href="../../index.html">Homepage</a></li>
-									<li><a href="../generic.html">Generic</a></li>
-									<li><a href="../elements.html">Elements</a></li>
-									<li>
-										<span class="opener">Functions</span>
-										<ul>
-											<li><a href="#">Functions</a></li>
-											<li><a href="#">Arrow Functions</a></li>
-											<li><a href="#">This</a></li>
-										</ul>
-								</ul>
-							</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="#">Link</a>.</p>
-								</footer>
-
-						</div>
-					</div>
+					<h2>Por que arrow function?</h2>
+					<p>Existiram dois grandes motivos para criar arrow function.</p>
+					<p>O primeiro motivo foi para reduzir a sintaxe, por exemplo:</p>
+					<pre><code>const f3 = () => console.log(this === window)
+f3()</code></pre>
+					<p>O segundo motivo foi para ter um this que não varia, por exemplo:</p>
+					<pre><code>document.getElementsByTagName ('body')[0].onclick = f3</code></pre>
+					<img src="./thisImages/07This.png" alt="This image 07">
+					<p>Ao clicarmos na pagina vemos que o This não irá variar e se chamarmos a função também não irá váriar.</p>
+					<pre><code>f3()</code></pre>
+					<img src="./thisImages/08This.png" alt="This image 08">
+					<p><strong>Com isso concluímos como funciona o This dentro de uma função e dentro de uma arrow function sabendo que dentro de uma função normal o This pode váriar dependendo de como ele é chamado.
+						O This é definido no momento em que a função é definida, é o que chamamos de This Léxico.</strong></p>
+				</section>
 
 			</div>
+		</div>
 
-		<!-- Scripts -->
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
 
-			<script src="../../assets/js/jquery.min.js"></script>
-			<script src="../../assets/js/browser.min.js"></script>
-			<script src="../../assets/js/breakpoints.min.js"></script>
-			<script src="../../assets/js/util.js"></script>
-			<script src="../../assets/js/main.js"></script>
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
 
-	</body>
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="../../index.html">Homepage</a></li>
+						<li><a href="../generic.html">Generic</a></li>
+						<li><a href="../elements.html">Elements</a></li>
+						<li>
+							<span class="opener">Functions</span>
+							<ul>
+								<li><a href="#">Functions</a></li>
+								<li><a href="#">Arrow Functions</a></li>
+								<li><a href="#">This</a></li>
+							</ul>
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+						ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+						tempus aliquam.</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+						<li class="icon solid fa-phone">(000) 000-0000</li>
+						<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+							Nashville, TN 00000-0000</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a href="#">Link</a>.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="../../assets/js/jquery.min.js"></script>
+	<script src="../../assets/js/browser.min.js"></script>
+	<script src="../../assets/js/breakpoints.min.js"></script>
+	<script src="../../assets/js/util.js"></script>
+	<script src="../../assets/js/main.js"></script>
+
+</body>
+
 </html>
